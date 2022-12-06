@@ -19,8 +19,8 @@
 
   <main>
     <!-- Rating state start -->
-    <section id="ratingState">
-      <img src="/images/icon-star.svg" alt="An Orange Five Pointed Star">
+    <section class="ratingState">
+      <img src="images/icon-star.svg" alt="An Orange Five Pointed Star" class="star-logo">
   
       <h1>How did we do?</h1>
     
@@ -30,16 +30,16 @@
       <form action="#">
         <div class="radio-container">
 
-          <label for="one">1</label>
-          <input type="radio" name="rating" id="one">
-          <label for="two">2</label>
-          <input type="radio" name="rating" id="two">
-          <label for="three">3</label>
-          <input type="radio" name="rating" id="three">
-          <label for="four">4</label>
-          <input type="radio" name="rating" id="four">
-          <label for="five">5</label>
-          <input type="radio" name="rating" id="five">
+          <label for="one" class="ratings">1</label>
+          <input class="radio" type="radio" name="rating" id="one">
+          <label for="two" class="ratings">2</label>
+          <input class="radio" type="radio" name="rating" id="two">
+          <label for="three" class="ratings">3</label>
+          <input class="radio" type="radio" name="rating" id="three">
+          <label for="four" class="ratings">4</label>
+          <input class="radio" type="radio" name="rating" id="four">
+          <label for="five" class="ratings checked">5</label>
+          <input class="radio" type="radio" name="rating" id="five">
         </div>
         
         <button type="submit">Submit</button>
@@ -47,15 +47,15 @@
       <!-- Rating state end -->
     </section>
 
-    <section id="submitState">
+    <section class="submitState hidden">
       <!-- Thank you state start -->
+      <img src="images/illustration-thank-you.svg" alt="" class="ty-img">
+      <p class="selection">You selected <span id="current-rating">#</span> out of 5</p>
       
-        You selected <!-- Add rating here --> out of 5
+        <h1>Thank you!</h1>
       
-        Thank you!
-      
-        We appreciate you taking the time to give a rating. If you ever need more support, 
-        don’t hesitate to get in touch!
+        <p>We appreciate you taking the time to give a rating. If you ever need more support, 
+        don’t hesitate to get in touch!</p>
       
         <!-- Thank you state end -->
     </section>
@@ -63,8 +63,9 @@
 
   
   <footer class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="https://github.com/taekwonjoe1220">TaeKwonJoe1220</a>.
+    <span>
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="https://github.com/taekwonjoe1220" target="_blank">TaeKwonJoe1220</a>.
+    </span> 
   </footer>
   <script src="script.js"></script>
 </body>

@@ -68,9 +68,6 @@ p, h1, h2, h3, h4, h5, h6 {
   --font-family: 'Overpass', sans-serif;
 }
 
-#submitState {
-  display: none;
-}
 
 body {
   background: #000;
@@ -82,7 +79,7 @@ body {
   align-items: center;
 }
 
-img {
+.star-logo {
   background-color: var(--neutral-clr-700);
   border-radius: 50%;
   padding: 0.9rem;
@@ -96,9 +93,18 @@ main {
   border-radius: 2rem;
 }
 
-#ratingState {
+.ratingState, .submitState {
   display: grid;
   gap: 1rem;
+}
+
+.submitState {
+  justify-items: center;
+  text-align: center;
+}
+
+.submitState h1 {
+  font-size: 1rem;
 }
 
 form input[type="radio"]{
@@ -106,7 +112,6 @@ form input[type="radio"]{
   -webkit-appearance: none;
   appearance: none;
   /* For iOS < 15 to remove gradient background */
-  /* background-color: #fff; */
   /* Not removed via appearance */
   margin: 0;
 }
@@ -114,8 +119,8 @@ form input[type="radio"]{
   display: flex;
   justify-content: space-between;
   align-items: center;
-
 }
+
 form label {
   background: var(--neutral-clr-700);
   color: var(--neutral-clr-300);
@@ -127,9 +132,14 @@ form label {
   margin-bottom: 1rem;
 }
 
+form label:hover {
+  cursor: pointer;
+}
 
-
-
+form label:active {
+  background: var(--primary-clr);
+  color: var(--neutral-clr-100);
+}
 
 p {
   font-size: 15px;
@@ -146,4 +156,27 @@ button[type="submit"] {
   text-transform: uppercase;
   font-size: .8rem;
   letter-spacing: 2px;
+}
+
+.checked {
+  background: var(--neutral-clr-300);
+  color: var(--neutral-clr-100);
+}
+
+section.hidden {
+  display: none;
+}
+
+
+.attribution {
+  margin-top: 1rem;
+}
+
+.attribution span {
+  font-size: 0.875rem;
+  color: var(--neutral-clr-300);
+}
+.attribution span a {
+  text-decoration: none;
+  color: var(--primary-clr);
 }
