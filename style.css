@@ -87,7 +87,6 @@ body {
 
 main {
   max-width: 400px;
-  background: var(--neutral-clr-700);
   background: radial-gradient(circle at top, var(--neutral-clr-700), var(--neutral-clr-800));
   padding: 2rem;
   border-radius: 2rem;
@@ -96,6 +95,11 @@ main {
 .ratingState, .submitState {
   display: grid;
   gap: 1.5rem;
+}
+.ratingState h1 {
+  margin-bottom: -1rem;
+  margin-top: 0.125rem;
+  font-size: 1.75rem;
 }
 
 .submitState {
@@ -119,6 +123,7 @@ form input[type="radio"]{
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 0.25rem;
 }
 
 form label {
@@ -161,11 +166,13 @@ button[type="submit"] {
   letter-spacing: 2px;
   cursor: pointer;
   margin-top: 1rem;
+  border: 1px solid var(--neutral-clr-800);
 }
 
 button[type="submit"]:active {
   background: var(--neutral-clr-100);
   color: var(--primary-clr);
+  cursor:crosshair;
 }
 .checked {
   background: var(--neutral-clr-300);
@@ -188,4 +195,23 @@ section.hidden {
 .attribution span a {
   text-decoration: none;
   color: var(--primary-clr);
+}
+
+/* for testing */
+.btn {
+  margin: 0 auto;
+  height: 50px;
+  width: 100px;
+  background: #ccc;
+  color: #333;
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.btn:active {
+  background: #333;
+  color: #ccc;
 }
