@@ -1,13 +1,43 @@
 "use strict";
 
-const ratings = document.querySelectorAll('.ratings');
+const ratingsLabels = document.querySelectorAll('.ratings');
+const labelsArray = Array.from(ratingsLabels);
+const radioContainer = document.querySelector('.radio-container');
+const currentRating = document.getElementById('currentRating');
 const radios = document.querySelectorAll('.radio');
+const radiosArray = Array.from(radios);
+const ratingState = document.querySelector('.ratingState');
+const submitState = document.querySelector('.submitState');
 
-const checkedToggle = (e) => {
 
+// toggle states for testing / checking formatting
+const toggleBtn = document.querySelector('.btn');
+function toggleStates() {
+  ratingState.classList.toggle('hidden');
+  submitState.classList.toggle('hidden');
 }
 
-// click event trigger on radio
+toggleBtn.addEventListener('click', toggleStates);
+
+labelsArray.forEach(function (label) {
+  label.addEventListener('click', (e) => {
+    let current = e.target;
+    if (current.classList.contains('checked')) {
+      return;
+    } else {
+      removeChecked();
+      current.classList.add('checked');
+    }
+  })
+})
+
+function removeChecked() {
+  labelsArray.forEach(function (label) {
+    if (label.classList.contains('checked')) {
+      label.classList.remove('checked');
+    }
+  })
+}
   // if current radio selected is already checked, do nothing
 
   // if current radio not checked iterate over array of radios and remove all instance of classs "checked"
