@@ -172,7 +172,6 @@ button[type="submit"] {
 button[type="submit"]:active {
   background: var(--neutral-clr-100);
   color: var(--primary-clr);
-  cursor:crosshair;
 }
 .checked {
   background: var(--neutral-clr-300);

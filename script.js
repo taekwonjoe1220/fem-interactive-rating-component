@@ -1,36 +1,38 @@
 "use strict";
 
-const ratingsLabels = document.querySelectorAll('.ratings');
-const labelsArray = Array.from(ratingsLabels);
-const radioContainer = document.querySelector('.radio-container');
-const currentRating = document.getElementById('currentRating');
-const radios = document.querySelectorAll('.radio');
-const radiosArray = Array.from(radios);
+const labelsArray = Array.from(document.querySelectorAll('.ratings'));
+const currentRatingSpan = document.getElementById('current-rating');
 const ratingState = document.querySelector('.ratingState');
 const submitState = document.querySelector('.submitState');
+const submitBtn = document.getElementById('submit');
+let currentRating;
 
 
 // toggle states for testing / checking formatting
-const toggleBtn = document.querySelector('.btn');
-function toggleStates() {
-  ratingState.classList.toggle('hidden');
-  submitState.classList.toggle('hidden');
-}
+// const toggleBtn = document.querySelector('.btn');
+// function toggleStates() {
+//   ratingState.classList.toggle('hidden');
+//   submitState.classList.toggle('hidden');
+// }
 
-toggleBtn.addEventListener('click', toggleStates);
+// toggleBtn.addEventListener('click', toggleStates);
 
+// Add listener to each radio label to update styling as well as store which value is selected
 labelsArray.forEach(function (label) {
   label.addEventListener('click', (e) => {
     let current = e.target;
+    currentRating = current.innerText;
     if (current.classList.contains('checked')) {
       return;
     } else {
       removeChecked();
       current.classList.add('checked');
+      updateRatingSpan();
     }
   })
 })
 
+// Iterate over styles in the radio labels and clear them before applying the selected styling to the selected label
 function removeChecked() {
   labelsArray.forEach(function (label) {
     if (label.classList.contains('checked')) {
@@ -38,17 +40,18 @@ function removeChecked() {
     }
   })
 }
-  // if current radio selected is already checked, do nothing
 
-  // if current radio not checked iterate over array of radios and remove all instance of classs "checked"
-  // add class "checked" to currently clicked radio button label to update css
-  // update checked radio value (array index) to use for on submit function
+function updateRatingSpan() {
+  currentRatingSpan.innerText = currentRating;
+}
 
-
-// on submit function
-  // remove primary state
-  // render secondary state
-    // use stored value of array index to display what rating was selected on secondary state
-    // toggle display class of primary state to hide it
-    // toggle display class of secondary state to show it
-    // Dynamically render html? ** update to this later **
+submitBtn.addEventListener('click', (e)=> {
+  e.preventDefault();
+  if (currentRating != '#') {
+    ratingState.classList.toggle('hidden');
+    submitState.classList.toggle('hidden');
+  }
+  else {
+    return;
+  }
+})
