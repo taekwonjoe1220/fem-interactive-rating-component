@@ -8,15 +8,6 @@ const submitBtn = document.getElementById('submit');
 let currentRating;
 
 
-// toggle states for testing / checking formatting
-// const toggleBtn = document.querySelector('.btn');
-// function toggleStates() {
-//   ratingState.classList.toggle('hidden');
-//   submitState.classList.toggle('hidden');
-// }
-
-// toggleBtn.addEventListener('click', toggleStates);
-
 // Add listener to each radio label to update styling as well as store which value is selected
 labelsArray.forEach(function (label) {
   label.addEventListener('click', (e) => {
@@ -47,7 +38,7 @@ function updateRatingSpan() {
 
 submitBtn.addEventListener('click', (e)=> {
   e.preventDefault();
-  if (currentRating != '#') {
+  if (currentRating) {
     ratingState.classList.toggle('hidden');
     submitState.classList.toggle('hidden');
   }
